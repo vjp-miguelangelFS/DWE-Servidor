@@ -1,5 +1,5 @@
 <?php
-$nombre = 'anaMArial'
+$nombre = "anaMArial"
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +20,18 @@ $nombre = 'anaMArial'
 
     print strpos($nombre,'a') . "<br>";
     print strrpos($nombre,'a') . "<br>";
+
+    print str_ireplace('a',0,$nombre) . "<br>";
+
+    if(str_starts_with($nombre,'al') == true){
+        print 'El nombre empieza por al' . "<br>";
+    }else{
+        print 'El nombre no empieza por al' . "<br>";
+    }
+
+    print trim(rtrim($nombre)) . "<br>";
+
+    print ucfirst(strtolower($nombre));
     ?>
 </body>
 </html>
