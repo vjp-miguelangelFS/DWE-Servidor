@@ -8,11 +8,19 @@
 <body>
     <?php
         function exist($nombreTabla,$arrayAsociativo){
+            $fragmento='';
+            foreach ($arrayAsociativo as $valores => $value) {
+                $fragmento = $fragmento . '('.implode(',',$arrayAsociativo[$valores]).')';
+            };
 
-            return 'INSERT INTO '.$nombreTabla.' ('. implode(',',$arrayAsociativo) .') VALUES ('. implode(',',array_keys($arrayAsociativo)) .')';
+            return 'INSERT INTO '.$nombreTabla.' (nombre,apellido,edad) VALUES ('. $fragmento.')';
         }
 
-        $nombresValores = [10=> 'Carne',15=>'Pescado',20=>'Verdura'];
+         $nombresValores = [
+            ['Miguel','Fernández',19],
+            ['Pepe','Sanchez',22],
+            ['Ana','Gines',24],
+            ];
 
         print exist('RestauranteAlimentos',$nombresValores);
 
