@@ -68,6 +68,9 @@
         // 11
         
         //12
+
+        $nums = array(10,5,4,7,12,16,19,2,1,43);
+        print (array_sum($nums))
     ?>
     <!-- 10 -->
      <table border="1">
