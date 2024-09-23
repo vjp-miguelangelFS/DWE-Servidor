@@ -25,6 +25,9 @@
                 case '/':
                     return $op1 . ' ' .$sim. ' '. $op2. ' = '. $op1/$op2;
                     break;
+                default:
+                    return 'Error';
+                    break;
                 
             }
         };
