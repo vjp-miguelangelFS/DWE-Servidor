@@ -9,21 +9,23 @@
     <?php
         $anonima = function($op1,$sim,$op2){
 
+            $frag = $op1 . ' ' .$sim. ' '. $op2. ' = ';
+            
             switch($sim){
                 case '+':
-                    return $op1 . ' ' .$sim. ' '. $op2. ' = '. $op1+$op2;
+                    return $frag. $op1+$op2;
                     break;
 
                 case '-':
-                    return $op1 . ' ' .$sim. ' '. $op2. ' = '. $op1-$op2;
+                    return $frag. $op1-$op2;
                     break;
 
                 case '*':
-                    return $op1 . ' ' .$sim. ' '. $op2. ' = '. $op1*$op2;
+                    return $frag. $op1*$op2;
                     break;
 
                 case '/':
-                    return $op1 . ' ' .$sim. ' '. $op2. ' = '. $op1/$op2;
+                    return $frag. $op1/$op2;
                     break;
                 default:
                     return 'Error';
