@@ -20,23 +20,26 @@
 
 
         // 8
-        print 'For <br>';
-        for ($i=2; $i <= 20; $i=$i+2) { 
-            print $i.'<br>';
-        }
+        // print 'For <br>';
+        // for ($i=2; $i <= 20; $i=$i+2) { 
+        //     print $i.'<br>';
+        // }
 
-        print '<br> While <br>';
-        $i2=2;
-        while($i2 <=20){
-            print $i2.'<br>';
-            $i2 = $i2 +2;
-        }
-        print '<br> Do While <br>';
-        $i3=2;
-        do {
-            print $i3.'<br>';
-            $i3 = $i3 +2;
-        } while ($i3 <= 20);
+        // print '<br> While <br>';
+        // $i2=2;
+        // while($i2 <=20){
+        //     print $i2.'<br>';
+        //     $i2 = $i2 +2;
+        // }
+        // print '<br> Do While <br>';
+        // $i3=2;
+        // do {
+        //     print $i3.'<br>';
+        //     $i3 = $i3 +2;
+        // } while ($i3 <= 20);
+
+        
     ?>
+
 </body>
 </html>
