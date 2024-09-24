@@ -8,10 +8,32 @@
 <body>
     <?php
     $array = [
-        array('pais' => 'alemania','capital'=>'berlín','extension'=>557046,'habitantes'=>78420000),
-        array('pais' => 'austria','capital'=>'viena','extension'=>83849,'habitantes'=>7614000),
-        array('pais' => 'belgica','capital'=>'bruselas','extension'=>30518,'habitantes'=>9932000)
-    ]
+        array('pais' => 'Alemania','capital'=>'Berlín','extension'=>557046,'habitantes'=>78420000),
+        array('pais' => 'Austria','capital'=>'Viena','extension'=>83849,'habitantes'=>7614000),
+        array('pais' => 'Belgica','capital'=>'Bruselas','extension'=>30518,'habitantes'=>9932000)
+    ];
+
+    
     ?>
+
+    <table border="1">
+        <tr>
+            <td>País</td>
+            <td>Capital</td>
+            <td>Extensión</td>
+            <td>Habitantes</td>
+        </tr>
+        <?php
+            foreach ($array as $key) {
+                echo '<tr>';
+                foreach ($key as $key1 => $value1) {
+                    
+                    print '<td>'. $value1.'</td>';
+                    
+                }
+                echo '</tr>';
+            }
+        ?>
+    </table>
 </body>
 </html>
