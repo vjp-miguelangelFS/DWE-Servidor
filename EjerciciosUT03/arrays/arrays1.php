@@ -67,6 +67,14 @@
 
         // 11
         
+        foreach ($alumnos as $key => $value) {
+            $arrayIndexado[$key] = $alumnos[$key]['nombre'];
+        }
+
+        print_r($arrayIndexado);
+
+        echo '<br>';
+
         //12
 
         $nums = array(10,5,4,7,12,16,19,2,1,43);
