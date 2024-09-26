@@ -4,13 +4,15 @@ $nombre = "anaMArial"
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadenas1</title>
 </head>
+
 <body>
-    <?php 
+    <?php
     // 2
     print $nombre . "<br>";
     // 3
@@ -20,19 +22,19 @@ $nombre = "anaMArial"
     // 5
     print strtolower($nombre) . "<br>";
     // 6
-    print substr_count($nombre,strtoupper('a')) . "<br>";
+    print substr_count($nombre, strtoupper('a')) . "<br>";
     // 7
     print ord($nombre) . "<br>";
     // 8
-    print strpos($nombre,'a') . "<br>";
+    print strpos($nombre, 'a') . "<br>";
     // 9
-    print strrpos($nombre,'a') . "<br>";
+    print strrpos($nombre, 'a') . "<br>";
     // 19
-    print str_ireplace('a',0,$nombre) . "<br>";
+    print str_ireplace('a', 0, $nombre) . "<br>";
     // 11
-    if(str_starts_with($nombre,'al') == true){
+    if (str_starts_with($nombre, 'al') == true) {
         print 'El nombre empieza por al' . "<br>";
-    }else{
+    } else {
         print 'El nombre no empieza por al' . "<br>";
     }
     // 12
@@ -41,4 +43,5 @@ $nombre = "anaMArial"
     print ucfirst(strtolower($nombre));
     ?>
 </body>
+
 </html>
