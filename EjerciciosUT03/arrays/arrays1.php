@@ -12,24 +12,24 @@
     <?php
 
     // 1 Array que contiene 4 nombre
-    $nombre = ['Miguel', 'Ruben', 'Unai', 'Roberto'];
+    $nombres = ['Miguel', 'Ruben', 'Unai', 'Roberto'];
     // 2 Muestra el numero de elemento que contiene el array
 
     echo 'Ejercicio 2: <br>';
-    echo 'Contiene '.count($nombre).' elementos';
+    echo 'Contiene '.count($nombres).' elementos';
     echo '<br><br>';
 
     // 3 Separa los nombre del array con un separador
 
     echo 'Ejercicio 3: <br>';
     print 'Nombres del array: ';
-    print_r (implode(' ', $nombre));
+    print_r (implode(' ', $nombres));
     echo '<br><br>';
 
     // 4 Array ordenado en orden alfabetico
     
     echo 'Ejercicio 4: <br>';
-    $ordenado = $nombre;
+    $ordenado = $nombres;
 
     sort($ordenado);
     print 'Array ordenado: ';
@@ -40,22 +40,22 @@
     // 5 Invertir el array
 
     echo 'Ejercicio 5: <br>';
-    $nombreInvertido = array_reverse($nombre);
+    $nombresInvertido = array_reverse($nombres);
     print 'Array invertido: ';
-    print_r($nombreInvertido);
+    print_r($nombresInvertido);
     echo '<br><br>';
     // 6 Muestra la posición que tiene mi nombre en el array
 
     echo 'Ejercicio 6: <br>';
-    $nombreBuscar = array_search('Miguel', $nombre);
+    $nombresBuscar = array_search('Miguel', $nombres);
 
-    echo 'El nombre Miguel esta en la posición: ' . $nombreBuscar;
+    echo 'El nombre Miguel esta en la posición: ' . $nombresBuscar;
     echo '<br><br>';
 
     // 7 Array ordenado de forma aleatoria
 
     echo 'Ejercicio 7: <br>';
-    $arrayDesordenado = $nombre;
+    $arrayDesordenado = $nombres;
     shuffle($arrayDesordenado);
 
     print 'Array ordenado aleatoriamente: ';
@@ -65,7 +65,7 @@
     // 8 Muestra los alumnos que contengan una a
 
     echo 'Ejercicio 8: <br>';
-    $ContengaA = preg_grep('[a]', $nombre);
+    $ContengaA = preg_grep('[a]', $nombres);
     print 'Alumnos que contienen una a: ';
     print_r($ContengaA);
     echo '<br><br>';
@@ -104,7 +104,7 @@
         <tr>
             <td>Key</td>
             <?php
-            foreach ($nombre as $clave => $nombres) {
+            foreach ($nombres as $clave => $nombress) {
                 echo "<td>$clave</td>";
             }
             ?>
@@ -112,8 +112,8 @@
         <tr>
             <td>Nombre</td>
             <?php
-            foreach ($nombre as $clave => $nombres) {
-                echo "<td>$nombres</td>";
+            foreach ($nombres as $clave => $nombress) {
+                echo "<td>$nombress</td>";
             }
             ?>
         </tr>

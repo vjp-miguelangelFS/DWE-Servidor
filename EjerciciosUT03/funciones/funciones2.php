@@ -17,16 +17,16 @@
     function insert($nombreTabla, $array, &$sentencia_sql)
     {
 
-        $fragmento = '';
+        $valoresSentencia = '';
         foreach ($array as $valores => $value) {
-            $fragmento = $fragmento . '(' . implode(',', $array[$valores]) . ')';
+            $valoresSentencia = $valoresSentencia . '(' . implode(',', $array[$valores]) . ')';
         };
 
         $sentencia_sql = str_replace('tabla', $nombreTabla, $sentencia_sql);
 
         $sentencia_sql = str_replace('campos', 'nombre,apellido,edad', $sentencia_sql);
 
-        $sentencia_sql = str_replace('valores', $fragmento, $sentencia_sql);
+        $sentencia_sql = str_replace('valores', $valoresSentencia, $sentencia_sql);
 
         return $sentencia_sql;
     }

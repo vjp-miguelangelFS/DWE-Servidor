@@ -12,7 +12,7 @@
     <?php
 
     // Array con las contenidos de la tabla
-    $array = [
+    $datosTabla = [
         array('pais' => 'Alemania', 'capital' => 'Berlín', 'extension' => 557046, 'habitantes' => 78420000),
         array('pais' => 'Austria', 'capital' => 'Viena', 'extension' => 83849, 'habitantes' => 7614000),
         array('pais' => 'Belgica', 'capital' => 'Bruselas', 'extension' => 30518, 'habitantes' => 9932000)
@@ -29,7 +29,7 @@
             <td>Habitantes</td>
         </tr>
         <?php
-        foreach ($array as $key) {
+        foreach ($datosTabla as $key) {
             echo '<tr>';
             foreach ($key as $key1 => $value1) {
 

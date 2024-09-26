@@ -13,12 +13,12 @@
     // Esta función recibe como parametro el nombre de la tabla y los datos en un array, creando con con los paramentros una sentencia SQL para insertar una tabla a una base de datos
     function exist($nombreTabla, $arrayAsociativo)
     {
-        $fragmento = '';
+        $valoresSentencia = '';
         foreach ($arrayAsociativo as $valores => $value) {
-            $fragmento = $fragmento . '(' . implode(',', $arrayAsociativo[$valores]) . ')';
+            $valoresSentencia = $valoresSentencia . '(' . implode(',', $arrayAsociativo[$valores]) . ')';
         };
 
-        return 'INSERT INTO ' . $nombreTabla . ' (nombre,apellido,edad) VALUES (' . $fragmento . ')';
+        return 'INSERT INTO ' . $nombreTabla . ' (nombre,apellido,edad) VALUES (' . $valoresSentencia . ')';
     }
     // Array con los datos para añadir en la sentencia
     $nombresValores = [
