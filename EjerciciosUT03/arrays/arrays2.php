@@ -10,6 +10,8 @@
 
 <body>
     <?php
+
+    // Array con las contenidos de la tabla
     $array = [
         array('pais' => 'Alemania', 'capital' => 'Berlín', 'extension' => 557046, 'habitantes' => 78420000),
         array('pais' => 'Austria', 'capital' => 'Viena', 'extension' => 83849, 'habitantes' => 7614000),
@@ -18,7 +20,7 @@
 
 
     ?>
-
+    <!-- Creación de la tabla -->
     <table border="1">
         <tr>
             <td>País</td>

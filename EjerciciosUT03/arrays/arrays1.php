@@ -11,88 +11,93 @@
 <body>
     <?php
 
-    // 1
+    // 1 Array que contiene 4 nombre
     $nombre = ['Miguel', 'Ruben', 'Unai', 'Roberto'];
-    // 2
+    // 2 Muestra el numero de elemento que contiene el array
 
     echo 'Ejercicio 2: <br>';
-    echo count($nombre);
-    echo '<br>';
+    echo 'Contiene '.count($nombre).' elementos';
+    echo '<br><br>';
 
-    // 3
+    // 3 Separa los nombre del array con un separador
 
     echo 'Ejercicio 3: <br>';
-    print_r(implode(' ', $nombre));
-    echo '<br>';
+    print 'Nombres del array: ';
+    print_r (implode(' ', $nombre));
+    echo '<br><br>';
 
-    // 4
-
+    // 4 Array ordenado en orden alfabetico
+    
     echo 'Ejercicio 4: <br>';
     $ordenado = $nombre;
 
     sort($ordenado);
-
+    print 'Array ordenado: ';
     foreach ($ordenado as $clave => $valor) {
         echo ' ' . $valor;
     }
-    echo '<br>';
-    // 5
+    echo '<br><br>';
+    // 5 Invertir el array
 
     echo 'Ejercicio 5: <br>';
     $nombreInvertido = array_reverse($nombre);
+    print 'Array invertido: ';
     print_r($nombreInvertido);
-    echo '<br>';
-    // 6
+    echo '<br><br>';
+    // 6 Muestra la posición que tiene mi nombre en el array
 
     echo 'Ejercicio 6: <br>';
     $nombreBuscar = array_search('Miguel', $nombre);
 
     echo 'El nombre Miguel esta en la posición: ' . $nombreBuscar;
-    echo '<br>';
+    echo '<br><br>';
 
-    // 7
+    // 7 Array ordenado de forma aleatoria
 
     echo 'Ejercicio 7: <br>';
     $arrayDesordenado = $nombre;
     shuffle($arrayDesordenado);
 
+    print 'Array ordenado aleatoriamente: ';
     print_r($arrayDesordenado);
-    echo '<br>';
+    echo '<br><br>';
 
-    // 8
+    // 8 Muestra los alumnos que contengan una a
 
     echo 'Ejercicio 8: <br>';
     $ContengaA = preg_grep('[a]', $nombre);
-
+    print 'Alumnos que contienen una a: ';
     print_r($ContengaA);
-    echo '<br>';
+    echo '<br><br>';
 
-    // 9
+    // 9 Array que contenga arrays
 
     echo 'Ejercicio 9: <br>';
     $alumnos = [array('id' => 1, 'nombre' => 'Miguel', 'Edad' => 19), array('id' => 2, 'nombre' => 'Roberto', 'Edad' => 19), array('id' => 3, 'nombre' => 'Unai', 'Edad' => 20)];
 
     print_r($alumnos);
-    echo '<br>';
+    echo '<br><br>';
 
-    // 11
+    // 11 Array indexado
 
     echo 'Ejercicio 11: <br>';
+    print 'Array que contiene solo los nombres de los alumnos: ';
     foreach ($alumnos as $key => $value) {
         $arrayIndexado[$key] = $alumnos[$key]['nombre'];
     }
 
     print_r($arrayIndexado);
 
-    echo '<br>';
+    echo '<br><br>';
 
-    //12
+    //12 Suma todos los numeros de una array
 
     echo 'Ejercicio 12: <br>';
     $nums = array(10, 5, 4, 7, 12, 16, 19, 2, 1, 43);
+    print 'Array sumado: ';
     print(array_sum($nums))
     ?>
-    <!-- 10 -->
+    <!-- 10 Crea una tabla que muestre los datos de los alumnos -->
     <p>Ejercicio 10</p>
 
     <table border="1">
