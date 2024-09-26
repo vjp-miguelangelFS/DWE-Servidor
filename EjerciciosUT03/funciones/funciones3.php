@@ -10,25 +10,27 @@
 
 <body>
     <?php
+
+    // Esta función recoge los dos operandos y el simbolo y muestra por pantalla el resultado
     $anonima = function ($op1, $sim, $op2) {
 
         $frag = $op1 . ' ' . $sim . ' ' . $op2 . ' = ';
 
         switch ($sim) {
             case '+':
-                return $frag . $op1 + $op2;
+                return 'Suma: ' . $frag . $op1 + $op2;
                 break;
 
             case '-':
-                return $frag . $op1 - $op2;
+                return 'Resta: ' . $frag . $op1 - $op2;
                 break;
 
             case '*':
-                return $frag . $op1 * $op2;
+                return 'Multiplicación: ' . $frag . $op1 * $op2;
                 break;
 
             case '/':
-                return $frag . $op1 / $op2;
+                return 'División: ' . $frag . $op1 / $op2;
                 break;
             default:
                 return 'Error';
@@ -36,12 +38,13 @@
         }
     };
 
-
+    // Esta fución llama a la función anonima para realizar los calculos
     function operaciones($anonima, $operando1, $simbolo, $operando2)
     {
         print $anonima($operando1, $simbolo, $operando2) . '<br>';
     }
 
+    // Llamada a la función operaciones
     operaciones($anonima, 10, '+', 10);
     operaciones($anonima, 20, '-', 10);
     operaciones($anonima, 10, '*', 5);
