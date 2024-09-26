@@ -12,7 +12,8 @@
     <?php
     $sentencia_sql = "insert into tabla (campos) values (valores)";
 
-    // Recibe como parametro el nombre de la tabla, el array que contiene los valores y la sentenciaSQL y posteriormente cambia la sentenciaSQL.
+    // Recibe como parametro el nombre de la tabla, el array que contiene los valores y la sentenciaSQL pasado por referencia,
+    // posteriormente se modifica la sentenciaSQL.
     function insert($nombreTabla, $array, &$sentencia_sql)
     {
 
@@ -35,8 +36,9 @@
         ['Pepe', 'Sanchez', 22],
         ['Ana', 'Gines', 24],
     ];
+    // Llamada a la función
     insert('NombreEdad', $nombresValores, $sentencia_sql);
-
+    // Muestra la sentenciaSQL
     echo $sentencia_sql
     ?>
 </body>

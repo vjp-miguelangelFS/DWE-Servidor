@@ -26,7 +26,7 @@
         ['Pepe', 'Sanchez', 22],
         ['Ana', 'Gines', 24],
     ];
-
+    // Llamada a la función 
     print exist('RestauranteAlimentos', $nombresValores);
 
     ?>
