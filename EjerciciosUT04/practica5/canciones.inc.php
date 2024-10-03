@@ -2,7 +2,7 @@
 require 'practica5.php';
 
 
-function buscarCancion(...$busqueda)
+function buscarCancion()
 {
 
     $canciones = [
@@ -15,8 +15,8 @@ function buscarCancion(...$busqueda)
         ['titulo' => 'Take Five', 'album' => 'Time Out', 'genero' => 'Jazz'],
         ['titulo' => 'My Baby Just Cares for Me', 'album' => 'Little Girl Blue', 'genero' => 'Jazz'],
 
-        ['titulo' => 'Dancing Queen', 'album' => 'Arrival', 'genero' => 'Blues'],
-        ['titulo' => 'Dancing Queen', 'album' => 'Arrival', 'genero' => 'Blues'],
+        ['titulo' => 'Stone Crazy', 'album' => 'I Was Walking Through the Woods', 'genero' => 'Blues'],
+        ['titulo' => 'Sno-Cone, Part 2', 'album' => 'Truckin with Albert Collins', 'genero' => 'Blues'],
     ];
 
     return $canciones;
@@ -28,7 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $buscarEn = $_POST['radio1'];
     $genero = $_POST['genero'];
 
+    $cancionesEncontradas = [];
 
+    foreach(buscarCancion() as $canciones){
+        if($buscarEn == 'titulo'){
+            if(strpos($canciones['titulo'],$texto) !== false){
+                print_r($canciones);
+            }
+        }
+    }
 }
 
 ?>
