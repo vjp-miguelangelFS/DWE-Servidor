@@ -20,10 +20,10 @@
         <input type="radio" name="radio1" value="titulo" required>
         <label for="titulo">Título de canción</label>
 
-        <input type="radio" name="radio1" value="album" required>
+        <input type="radio" name="radio1" value="album">
         <label for="album">Nombres de álbum</label>
 
-        <input type="radio" name="radio1" value="ambos" required>
+        <input type="radio" name="radio1" value="ambos">
         <label for="ambos">Ambos campos</label>
 
         <br><br>
