@@ -1,6 +1,6 @@
 <?php
-require 'practica5.php';
 
+require 'practica5.php';
 
 function buscarCancion()
 {
@@ -30,13 +30,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $cancionesEncontradas = [];
 
-    foreach(buscarCancion() as $canciones){
-        if($buscarEn == 'titulo'){
-            if(strpos($canciones['titulo'],$texto) !== false){
+    foreach (buscarCancion() as $canciones) {
+        if ($buscarEn == 'titulo') {
+            if (strpos($canciones['titulo'], $texto) !== false) {
                 print_r($canciones);
+            }
+        } else {
+            if ($buscarEn == 'album') {
+                if (strpos($canciones['album'], $texto) !== false) {
+                    print_r($canciones);
+                }
             }
         }
     }
 }
-
-?>
