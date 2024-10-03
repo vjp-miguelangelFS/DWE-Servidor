@@ -1,16 +1,25 @@
 <?php
+require 'practica5.php';
 
-    function buscarCancion(...$busqueda){
+
+function buscarCancion(...$busqueda)
+{
 
     $canciones = [
-        ['titulo'=>'Hola','album'=>'ewqewq','genero'=>'Pop'],
-        ['titulo'=>'Hola2','album'=>'ewqewq2','genero'=>'Jazz']
+        ['titulo' => 'Hola', 'album' => 'ewqewq', 'genero' => 'Pop'],
+        ['titulo' => 'Hola2', 'album' => 'ewqewq2', 'genero' => 'Jazz']
     ];
 
-    $texto = trim(htmlspecialchars($_POST['texto']));
-    $buscar = trim(htmlspecialchars($_POST['radio1']));
-    $genero = trim(htmlspecialchars($_POST['genero']));
-
-    require 'practica5.php';
+    return $canciones;
 }
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $texto = $_POST['texto'];
+    $buscarEn = $_POST['radio1'];
+    $genero = $_POST['genero'];
+
+    
+}
+
 ?>
