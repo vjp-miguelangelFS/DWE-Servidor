@@ -40,6 +40,8 @@
         <br><br>
 
         <input type="submit" value="Buscar">
+
+        <br><br>
     </form>
 </body>
 </html>
