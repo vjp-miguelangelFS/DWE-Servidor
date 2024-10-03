@@ -11,19 +11,19 @@
         <h1>Búsqueda de canciones</h1>
 
         <label for="texto">Texto a buscar: </label>
-        <input type="text" name="texto">
+        <input type="text" name="texto" value="<?php if (isset($_POST['texto'])) echo $_POST['texto']?>">
 
         <br><br>
 
         <label for="buscar">Buscar en: </label>
 
-        <input type="radio" name="radio1" value="titulo">
+        <input type="radio" name="radio1" value="titulo" required>
         <label for="titulo">Título de canción</label>
 
-        <input type="radio" name="radio1" value="album">
+        <input type="radio" name="radio1" value="album" required>
         <label for="album">Nombres de álbum</label>
 
-        <input type="radio" name="radio1" value="ambos">
+        <input type="radio" name="radio1" value="ambos" required>
         <label for="ambos">Ambos campos</label>
 
         <br><br>

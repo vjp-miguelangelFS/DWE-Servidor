@@ -5,7 +5,7 @@ require 'practica5.php';
 function buscarCancion()
 {
 
-    $canciones = [
+    $cancion = [
         ['titulo' => 'Take On Me', 'album' => 'Hunting High and Low', 'genero' => 'Pop'],
         ['titulo' => 'Dancing Queen', 'album' => 'Arrival', 'genero' => 'Pop'],
 
@@ -19,7 +19,7 @@ function buscarCancion()
         ['titulo' => 'Sno-Cone, Part 2', 'album' => 'Truckin with Albert Collins', 'genero' => 'Blues'],
     ];
 
-    return $canciones;
+    return $cancion;
 }
 
 
@@ -27,8 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $texto = $_POST['texto'];
     $buscarEn = $_POST['radio1'];
     $genero = $_POST['genero'];
-
-    $cancionesEncontradas = [];
 
 
     echo "<table border='1'>";
@@ -39,34 +37,57 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "<th>Genero</th>";
 
     echo "</tr>";
-    foreach (buscarCancion() as $canciones) {
-        
+    foreach (buscarCancion() as $cancion) {
+
         if ($buscarEn == 'titulo') {
-            if (strpos($canciones['titulo'], $texto) !== false) {
-                echo "<tr>";
-                print('<td>' . $canciones['titulo'] . '</td>');
-                print('<td>' . $canciones['album'] . '</td>');
-                print('<td>' . $canciones['genero'] . '</td>');
-                echo "</tr>";
+            if (strpos($cancion['titulo'], $texto) !== false) {
+                if ($cancion['genero'] == $genero) {
+                    echo "<tr>";
+                    print('<td>' . $cancion['titulo'] . '</td>');
+                    print('<td>' . $cancion['album'] . '</td>');
+                    print('<td>' . $cancion['genero'] . '</td>');
+                    echo "</tr>";
+                } else if ($genero == 'Todos') {
+                    echo "<tr>";
+                    print('<td>' . $cancion['titulo'] . '</td>');
+                    print('<td>' . $cancion['album'] . '</td>');
+                    print('<td>' . $cancion['genero'] . '</td>');
+                    echo "</tr>";
+                }
             }
         } else if ($buscarEn == 'album') {
-            if (strpos($canciones['album'], $texto) !== false) {
-                echo "<tr>";
-                print('<td>' . $canciones['titulo'] . '</td>');
-                print('<td>' . $canciones['album'] . '</td>');
-                print('<td>' . $canciones['genero'] . '</td>');
-                echo "</tr>";
+            if (strpos($cancion['album'], $texto) !== false) {
+                if ($cancion['genero'] == $genero) {
+                    echo "<tr>";
+                    print('<td>' . $cancion['titulo'] . '</td>');
+                    print('<td>' . $cancion['album'] . '</td>');
+                    print('<td>' . $cancion['genero'] . '</td>');
+                    echo "</tr>";
+                } else if ($genero == 'Todos') {
+                    echo "<tr>";
+                    print('<td>' . $cancion['titulo'] . '</td>');
+                    print('<td>' . $cancion['album'] . '</td>');
+                    print('<td>' . $cancion['genero'] . '</td>');
+                    echo "</tr>";
+                }
             }
         } else if ($buscarEn == 'ambos') {
-            if (strpos($canciones['titulo'], $texto) !== false || strpos($canciones['album'], $texto) !== false) {
-                echo "<tr>";
-                print('<td>' . $canciones['titulo'] . '</td>');
-                print('<td>' . $canciones['album'] . '</td>');
-                print('<td>' . $canciones['genero'] . '</td>');
-                echo "</tr>";
+            if (strpos($cancion['titulo'], $texto) !== false || strpos($cancion['album'], $texto) !== false) {
+                if ($cancion['genero'] == $genero) {
+                    echo "<tr>";
+                    print('<td>' . $cancion['titulo'] . '</td>');
+                    print('<td>' . $cancion['album'] . '</td>');
+                    print('<td>' . $cancion['genero'] . '</td>');
+                    echo "</tr>";
+                } else if ($genero == 'Todos') {
+                    echo "<tr>";
+                    print('<td>' . $cancion['titulo'] . '</td>');
+                    print('<td>' . $cancion['album'] . '</td>');
+                    print('<td>' . $cancion['genero'] . '</td>');
+                    echo "</tr>";
+                }
             }
         }
-        
     }
     echo "</table>";
 }
