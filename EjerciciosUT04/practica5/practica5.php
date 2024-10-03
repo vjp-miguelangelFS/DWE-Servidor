@@ -30,11 +30,11 @@
 
         <label for="genero">Género musical: </label>
         <select name="genero">
-            <option value="todos" selected>Todos</option>
-            <option value="blues">Blues</option>
-            <option value="jazz">Jazz</option>
-            <option value="pop">Pop</option>
-            <option value="rock">Rock</option>
+            <option value="Todos" selected>Todos</option>
+            <option value="Blues">Blues</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Pop">Pop</option>
+            <option value="Rock">Rock</option>
         </select>
 
         <br><br>
