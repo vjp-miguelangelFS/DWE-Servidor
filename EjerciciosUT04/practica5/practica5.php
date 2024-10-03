@@ -23,8 +23,8 @@
         <input type="radio" name="radio1" value="album">
         <label for="album">Nombres de álbum</label>
 
-        <input type="radio" name="radio1" value="ambos respectivamente">
-        <label for="ambos respectivamente">Ambos campos</label>
+        <input type="radio" name="radio1" value="ambos">
+        <label for="ambos">Ambos campos</label>
 
         <br><br>
 
