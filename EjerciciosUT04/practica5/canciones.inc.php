@@ -1,6 +1,6 @@
 <?php
 
-require 'practica5.php';
+// require 'practica5.php';
 
 function cabeceraTabla()
 {

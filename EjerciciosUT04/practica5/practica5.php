@@ -17,13 +17,13 @@
 
         <label for="buscar">Buscar en: </label>
 
-        <input type="radio" name="radio1" value="titulo" required>
+        <input type="radio" name="radio1" value="titulo" <?php if($_POST['radio1'] == 'titulo') print 'checked'?>>
         <label for="titulo">Título de canción</label>
 
-        <input type="radio" name="radio1" value="album">
+        <input type="radio" name="radio1" value="album" <?php if($_POST['radio1'] == 'album') print 'checked'?>>
         <label for="album">Nombres de álbum</label>
 
-        <input type="radio" name="radio1" value="ambos">
+        <input type="radio" name="radio1" value="ambos" <?php if($_POST['radio1'] == 'ambos') print 'checked'?>>
         <label for="ambos">Ambos campos</label>
 
         <br><br>
@@ -31,10 +31,10 @@
         <label for="genero">Género musical: </label>
         <select name="genero">
             <option value="Todos" selected>Todos</option>
-            <option value="Blues">Blues</option>
-            <option value="Jazz">Jazz</option>
-            <option value="Pop">Pop</option>
-            <option value="Rock">Rock</option>
+            <option value="Blues" <?php if($_POST['genero'] == 'Blues') print 'selected'?>>Blues</option>
+            <option value="Jazz" <?php if($_POST['genero'] == 'Jazz') print 'selected'?>>Jazz</option>
+            <option value="Pop" <?php if($_POST['genero'] == 'Pop') print 'selected'?>>Pop</option>
+            <option value="Rock" <?php if($_POST['genero'] == 'Rock') print 'selected'?>>Rock</option>
         </select>
 
         <br><br>
@@ -43,5 +43,8 @@
 
         <br><br>
     </form>
+    <?php
+        require "canciones.inc.php"
+    ?>
 </body>
 </html>
