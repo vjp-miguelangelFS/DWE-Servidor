@@ -17,13 +17,13 @@
 
         <label for="buscar">Buscar en: </label>
 
-        <input type="radio" name="radio1" value="titulo" <?php if($_POST['radio1'] == 'titulo') print 'checked'?>>
+        <input type="radio" name="radio1" value="titulo" <?php if(isset($_POST['radio1']) && $_POST['radio1'] == 'titulo') print 'checked'?>>
         <label for="titulo">Título de canción</label>
 
-        <input type="radio" name="radio1" value="album" <?php if($_POST['radio1'] == 'album') print 'checked'?>>
+        <input type="radio" name="radio1" value="album" <?php if(isset($_POST['radio1']) && $_POST['radio1'] == 'album') print 'checked'?>>
         <label for="album">Nombres de álbum</label>
 
-        <input type="radio" name="radio1" value="ambos" <?php if($_POST['radio1'] == 'ambos') print 'checked'?>>
+        <input type="radio" name="radio1" value="ambos" <?php if(isset($_POST['radio1']) &&  $_POST['radio1'] == 'ambos') print 'checked'?>>
         <label for="ambos">Ambos campos</label>
 
         <br><br>
@@ -31,10 +31,10 @@
         <label for="genero">Género musical: </label>
         <select name="genero">
             <option value="Todos" selected>Todos</option>
-            <option value="Blues" <?php if($_POST['genero'] == 'Blues') print 'selected'?>>Blues</option>
-            <option value="Jazz" <?php if($_POST['genero'] == 'Jazz') print 'selected'?>>Jazz</option>
-            <option value="Pop" <?php if($_POST['genero'] == 'Pop') print 'selected'?>>Pop</option>
-            <option value="Rock" <?php if($_POST['genero'] == 'Rock') print 'selected'?>>Rock</option>
+            <option value="Blues" <?php if(isset($_POST['genero']) && $_POST['genero'] == 'Blues') print 'selected'?>>Blues</option>
+            <option value="Jazz" <?php if(isset($_POST['genero']) && $_POST['genero'] == 'Jazz') print 'selected'?>>Jazz</option>
+            <option value="Pop" <?php if(isset($_POST['genero']) && $_POST['genero'] == 'Pop') print 'selected'?>>Pop</option>
+            <option value="Rock" <?php if(isset($_POST['genero']) && $_POST['genero'] == 'Rock') print 'selected'?>>Rock</option>
         </select>
 
         <br><br>
