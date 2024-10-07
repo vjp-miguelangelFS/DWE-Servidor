@@ -108,11 +108,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    echo "</table>";
+    
 
     if(isset ($cancionesEncontradas)){
-        
+        cabeceraTabla();
+        foreach ($cancionesEncontradas as $cancion) {
+            echo "<tr>";
+                    print('<td>' . $cancion['titulo'] . '</td>');
+                    print('<td>' . $cancion['album'] . '</td>');
+                    print('<td>' . $cancion['genero'] . '</td>');
+                    echo "</tr>";
+        }
+        echo "</table>";
+    }else{
+        print('No se ha encontrado niguna cancion');
     }
-
-    print_r($cancionesEncontradas);
 }
