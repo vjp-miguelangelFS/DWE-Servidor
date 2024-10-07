@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "</tr>";
         }
         echo "</table>";
-    }else{
+    } else {
         print 'No se ha encontrado ninguna canción';
     }
 }
