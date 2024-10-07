@@ -2,6 +2,17 @@
 
 require 'practica5.php';
 
+function cabeceraTabla(){
+    echo "<table border='1'>";
+    echo "<tr>";
+
+    echo "<th>Titulo</th>";
+    echo "<th>Album</th>";
+    echo "<th>Genero</th>";
+
+    echo "</tr>";
+}
+
 function buscarCancion()
 {
 
@@ -28,15 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $buscarEn = $_POST['radio1'];
     $genero = $_POST['genero'];
 
-
-    echo "<table border='1'>";
-    echo "<tr>";
-
-    echo "<th>Titulo</th>";
-    echo "<th>Album</th>";
-    echo "<th>Genero</th>";
-
-    echo "</tr>";
+    cabeceraTabla();
+    
     foreach (buscarCancion() as $cancion) {
 
         if ($buscarEn == 'titulo') {
