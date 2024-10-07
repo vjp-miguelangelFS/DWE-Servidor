@@ -71,8 +71,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-
-
     if (isset($cancionesEncontradas)) {
         cabeceraTabla();
         foreach ($cancionesEncontradas as $cancion) {
