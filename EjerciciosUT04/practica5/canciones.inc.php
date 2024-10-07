@@ -1,8 +1,9 @@
 <?php
-
+// 
 // require 'practica5.php';
 
-function cabeceraTabla()
+// Esta función mostra la tabla con un foreach que recorre el array de canciones encontradas y las muestra por pantalla
+function mostrarTabla($canciones)
 {
     echo "<table border='1'>";
     echo "<tr>";
@@ -12,8 +13,19 @@ function cabeceraTabla()
     echo "<th>Genero</th>";
 
     echo "</tr>";
+
+    foreach ($canciones as $cancion) {
+        echo "<tr>";
+        print('<td>' . $cancion['titulo'] . '</td>');
+        print('<td>' . $cancion['album'] . '</td>');
+        print('<td>' . $cancion['genero'] . '</td>');
+        echo "</tr>";
+    }
+
+    echo "</table>";
 }
 
+// Creo un array con la listas de las canciones y devulvo el array
 function buscarCancion()
 {
 
@@ -34,7 +46,7 @@ function buscarCancion()
     return $cancion;
 }
 
-
+// En caso de que si rellene el formulario recorreca el array de las canciónes buscando canciones que coincidadan con los requisitos recibidos del formulario
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $texto = $_POST['texto'];
     $buscarEn = $_POST['radio1'];
@@ -43,7 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cancionesEncontradas;
 
     foreach (buscarCancion() as $cancion) {
-
+        // Mediante un if determina en que campo debe de buscar el texto relleno en el formulatio,
+        // y cuando se entre en el if buscara las canciones que coincidaan con el genero seleccionado en el formulario.
         if ($buscarEn == 'titulo') {
             if (strpos($cancion['titulo'], $texto) !== false) {
                 if ($cancion['genero'] == $genero) {
@@ -71,16 +84,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+    // Si $cancionesEncontradas no esta vacia mostrara la tabla y
+    // en caso de que $cancionesEncontradas este vacia mostra un mesaje informativo al usuario
     if (isset($cancionesEncontradas)) {
-        cabeceraTabla();
-        foreach ($cancionesEncontradas as $cancion) {
-            echo "<tr>";
-            print('<td>' . $cancion['titulo'] . '</td>');
-            print('<td>' . $cancion['album'] . '</td>');
-            print('<td>' . $cancion['genero'] . '</td>');
-            echo "</tr>";
-        }
-        echo "</table>";
+        mostrarTabla($cancionesEncontradas);
     } else {
         print 'No se ha encontrado ninguna canción';
     }

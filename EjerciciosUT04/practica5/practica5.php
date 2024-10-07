@@ -9,14 +9,16 @@
 </head>
 
 <body>
+    <!-- Formulario para buscar una canción -->
     <form action=<?= $_SERVER['PHP_SELF'] ?> method="post">
         <h1>Búsqueda de canciones</h1>
-
+        <!-- Input para introduccir el texto que deseas buscar, para dar más funcionalidad al formulario en caso de que el campo texto se rellene no desaparecera -->
         <label for="texto">Texto a buscar: </label>
         <input type="text" name="texto" value="<?php if (isset($_POST['texto'])) echo $_POST['texto'] ?>">
 
         <br><br>
-
+        <!-- Input para seleccionar donde deses buscar el texto introducido en el anteriorinput, igual que en el anterior input en caso de marcar un radio se quedara marcado y
+        es obligatorio seleccionar una de las 3 opciones -->
         <label for="buscar">Buscar en: </label>
 
         <input type="radio" name="radio1" value="titulo" <?php if (isset($_POST['radio1']) && $_POST['radio1'] == 'titulo') print 'checked' ?>>
@@ -29,7 +31,8 @@
         <label for="ambos">Ambos campos</label>
 
         <br><br>
-
+        <!-- Input para seleccionar el genero de la canción que deseas buscar y igual que en las anteriores input si seleccionas una opción se mantiene y no se borra, 
+        la opción todos esta seleccionada de base -->
         <label for="genero">Género musical: </label>
         <select name="genero">
             <option value="Todos" selected>Todos</option>
@@ -40,12 +43,12 @@
         </select>
 
         <br><br>
-
+        <!-- Input para enviar dos datos del formulario -->
         <input type="submit" value="Buscar">
 
         <br><br>
     </form>
-
+    <!-- Fichero que realiza la busqueda y muestra una tabla de las canciónes que cumplan los requisitos -->
     <?php
     require "canciones.inc.php"
     ?>
